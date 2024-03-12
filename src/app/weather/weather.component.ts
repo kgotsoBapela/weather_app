@@ -11,6 +11,7 @@ import exp from 'constants';
 })
 export class WeatherComponent implements OnInit{
   public weatherSearchForm!: FormGroup;
+  public weatherData: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,16 +21,13 @@ export class WeatherComponent implements OnInit{
     this.weatherSearchForm = this.formBuilder.group({ location: ['']})
   }
 
-  sendToAPIXU(formValue:any){
+  sendToWeatherStack(formValue:any){
     console.log(formValue.location)
+    this.weatherstackService
+      .getWeather(formValue.location)
+      .subscribe(data => console.log(data));
 
-    this.weatherstackService.getWeather(formValue.location).subscribe( data => console.log(data))
   }
 
-  onSubmit(formValue:any){
-    // console.log(formValue.location)
-  }
 }
-
-
 
