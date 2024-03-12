@@ -8,7 +8,7 @@ import { allAppRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ApixuService } from './apixu.service';
+import { WeatherstackService } from './weatherstack.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ApixuService } from './apixu.service';
   ],
   providers: [
     provideClientHydration(),
-    ApixuService
+    WeatherstackService
   ],
   bootstrap: [AppComponent]
 })
